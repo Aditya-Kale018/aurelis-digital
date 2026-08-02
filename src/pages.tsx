@@ -172,8 +172,8 @@ function AboutPage() {
       </p>
 
       <p className="surface-copy mt-6">
-        Oversees operations, business development, and client relationships,
-        helping transform ambitious ideas into successful digital products.
+        Drives AI innovation, intelligent automation, and emerging technologies,
+        creating practical solutions that help businesses grow and scale.
       </p>
     </div>
         <div className={cardDarkLarge}>
@@ -188,8 +188,8 @@ function AboutPage() {
       </p>
 
       <p className="surface-copy mt-6">
-        Leads strategy, product vision, design direction, and AI innovation,
-        ensuring every Aurelis project delivers exceptional quality.
+        Leads strategy, software architecture, and design systems, UI/UX design,
+        building scalable digital products with a strong focus on innovation and technical excellence.
       </p>
     </div>
     
@@ -206,8 +206,8 @@ function AboutPage() {
       </p>
 
       <p className="surface-copy mt-6">
-        Leads engineering and technology, building scalable, high-performance
-        solutions that power every Aurelis product.
+        Specializes in full-stack engineering, building modern frontend experiences
+        and scalable backend systems with performance and reliability at the core.
       </p>
     </div>
 
