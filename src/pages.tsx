@@ -137,6 +137,82 @@ function AboutPage() {
           <StatPill label="Launch posture" value="Premium" />
         </div>
       </section>
+
+      <section
+  data-surface-tone="dark"
+  className={`${sectionToneClass.dark} px-margin-desktop py-section-gap`}
+>
+  <div className="text-center mb-16">
+    <p className="font-label-mono text-[11px] uppercase tracking-[0.28em] text-on-tertiary-container">
+      Leadership
+    </p>
+
+    <h2 className="mt-4 font-headline-lg text-5xl text-on-primary">
+      The People Behind Aurelis
+    </h2>
+
+    <p className="surface-copy mt-6 max-w-2xl mx-auto">
+      Aurelis Digital is led by a small founding team passionate about building
+      premium digital experiences, modern web products, and AI-powered
+      solutions.
+    </p>
+  </div>
+
+  <div className="grid gap-8 md:grid-cols-3">
+
+    <div className={cardDarkLarge}>
+      <div className="w-14 h-[2px] bg-primary rounded-full mb-8" />
+
+      <h3 className="font-headline-lg text-3xl text-on-primary">
+        Aditya Kale
+      </h3>
+
+      <p className="mt-3 font-label-mono text-[11px] uppercase tracking-[0.24em] text-on-tertiary-container">
+        Founder & CEO
+      </p>
+
+      <p className="surface-copy mt-6">
+        Leads strategy, product vision, design direction, and AI innovation,
+        ensuring every Aurelis project delivers exceptional quality.
+      </p>
+    </div>
+
+    <div className={cardDarkLarge}>
+      <div className="w-14 h-[2px] bg-primary rounded-full mb-8" />
+
+      <h3 className="font-headline-lg text-3xl text-on-primary">
+        Soham Kale
+      </h3>
+
+      <p className="mt-3 font-label-mono text-[11px] uppercase tracking-[0.24em] text-on-tertiary-container">
+        Co-Founder
+      </p>
+
+      <p className="surface-copy mt-6">
+        Oversees operations, business development, and client relationships,
+        helping transform ambitious ideas into successful digital products.
+      </p>
+    </div>
+
+    <div className={cardDarkLarge}>
+      <div className="w-14 h-[2px] bg-primary rounded-full mb-8" />
+
+      <h3 className="font-headline-lg text-3xl text-on-primary">
+        Mayur
+      </h3>
+
+      <p className="mt-3 font-label-mono text-[11px] uppercase tracking-[0.24em] text-on-tertiary-container">
+        Co-Founder
+      </p>
+
+      <p className="surface-copy mt-6">
+        Leads engineering and technology, building scalable, high-performance
+        solutions that power every Aurelis product.
+      </p>
+    </div>
+
+  </div>
+</section>
     </>
   );
 }
