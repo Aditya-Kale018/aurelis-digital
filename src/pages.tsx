@@ -177,13 +177,7 @@ function AboutPage() {
       </p>
     </div>
         <div className={cardDarkLarge}>
-      <div className="mb-8 flex justify-center">
-        <img
-          src="/aditya.jpg"
-          alt="Aditya Kale"
-        className="h-28 w-28 rounded-full object-cover border border-white/10"
-        />
-      </div>
+      <div className="w-14 h-[2px] bg-primary rounded-full mb-8" />
 
       <h3 className="font-headline-lg text-3xl text-on-primary">
         Aditya Kale
