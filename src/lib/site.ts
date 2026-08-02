@@ -2,9 +2,9 @@ export const brand = {
   name: 'Aurelis Digital',
   shortName: 'Aurelis',
   tagline: 'Architectural precision in digital form.',
-  email: 'hello@aurelis.digital',
-  phone: '+91 98765 43210',
-  address: 'Aurelis Digital Studio, Bandra Kurla Complex, Mumbai, Maharashtra, India',
+  email: 'contact.aurelisdigital@gmail.com',
+  phone: '+91 84210 18893',
+  address: 'Aurelis Digital Studio, Bibwewadi, Pune, Maharashtra, India',
 };
 
 export const navigationItems = [
