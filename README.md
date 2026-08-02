@@ -18,3 +18,4 @@ View your app in AI Studio: https://ai.studio/apps/aadc9a01-edba-4479-8175-48682
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
    `npm run dev`
+# aurelis-digital
