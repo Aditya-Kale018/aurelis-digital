@@ -8,6 +8,7 @@ import { Capabilities } from './components/Capabilities';
 import { Contact as ContactCta } from './components/Contact';
 import { GrainOverlay } from './components/GrainOverlay';
 import { Hero } from './components/Hero';
+import { Work } from './components/Work';
 import { Footer } from './components/Footer';
 import { Navbar } from './components/Navbar';
 import { NavigationProvider, useNavigation } from './lib/navigation';
@@ -364,7 +365,10 @@ function ServiceDetailPage({ service }: { service: ServicePageData }) {
 }
 
 function WorkPage() {
-  useSeo('Work | Aurelis Digital', 'Selected case studies and premium digital experiences by Aurelis Digital.');
+  useSeo(
+    'Work | Aurelis Digital',
+    'Selected case studies and premium digital experiences by Aurelis Digital.',
+  );
 
   return (
     <>
@@ -373,47 +377,105 @@ function WorkPage() {
         title="Selected work with business outcomes in mind."
         description="Aurelis Digital creates polished systems that balance visual distinction with clarity, conversion, and trust."
         actions={
-          <AppLink href="/contact" className="rounded-full bg-primary px-8 py-4 font-label-mono text-[11px] uppercase tracking-[0.24em] text-on-primary">
+          <AppLink
+            href="/contact"
+            className="rounded-full bg-primary px-8 py-4 font-label-mono text-[11px] uppercase tracking-[0.24em] text-on-primary"
+          >
             Book Discovery Call
           </AppLink>
         }
       />
+
       <section data-surface-tone="dark" className={sectionDark}>
         <div className="space-y-16">
           {caseStudies.map((item, index) => (
             <div key={item.slug}>
               <Reveal delay={index * 0.06}>
                 <motion.div
-                  className={`${cardLightLarge} grid gap-8 lg:grid-cols-12 lg:items-center`}
-                  whileHover={{ y: -4 }}
-                  transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                  className={`${cardDarkLarge} grid gap-10 lg:grid-cols-12 lg:items-center`}
+                  whileHover={{ y: -6, scale: 1.01 }}
+                  transition={{
+                    duration: 0.28,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
                 >
-                  <div className={`lg:col-span-7 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                    <AppLink href={`/work/${item.slug}`} className="group block">
-                      <div className="relative aspect-[16/9] overflow-hidden rounded-[32px] border border-outline-variant/30 bg-white/60">
-                        <img alt={item.title} className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]" loading="lazy" src={item.image} />
-                        <div className="absolute inset-0 bg-gradient-to-t from-primary/35 via-primary/12 to-transparent" />
-                        <div className="absolute left-8 top-8 rounded-full border border-white/20 bg-white/72 px-4 py-2 text-[10px] uppercase tracking-[0.28em] text-primary backdrop-blur">
-                          View case study
+                  {/* Image */}
+                  <div
+                    className={`lg:col-span-7 ${
+                      index % 2 === 1 ? 'lg:order-2' : ''
+                    }`}
+                  >
+                    <AppLink
+                      href={`/work/${item.slug}`}
+                      className="group block"
+                    >
+                      <div className="relative aspect-[16/9] overflow-hidden rounded-[36px] border border-white/6 bg-[#0f1114]">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          loading="lazy"
+                          className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                        />
+
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+                        <div className="absolute left-8 top-8 rounded-full border border-[#D4AF37]/25 bg-[#191919]/90 px-5 py-2.5 font-label-mono text-[10px] uppercase tracking-[0.28em] text-[#D4AF37] backdrop-blur transition-all duration-300 group-hover:border-[#D4AF37]/60 group-hover:bg-[#222]">
+                          View Case Study
                         </div>
                       </div>
                     </AppLink>
                   </div>
-                  <div className={`lg:col-span-5 ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                    <p className="font-label-mono text-[11px] uppercase tracking-[0.24em] text-secondary">{item.label}</p>
-                    <h2 className="surface-title mt-4 font-headline-lg text-4xl">{item.title}</h2>
-                    <p className="surface-copy mt-6 font-body-lg text-body-lg">{item.description}</p>
-                    <div className="mt-8 flex flex-wrap gap-3">
+
+                  {/* Content */}
+                  <div
+                    className={`lg:col-span-5 ${
+                      index % 2 === 1 ? 'lg:order-1' : ''
+                    }`}
+                  >
+                    {/* Label */}
+                    <p className="mt-10 font-label-mono text-[11px] uppercase tracking-[0.24em] text-[#D4AF37] tracking-[0.35em]">
+                      {item.label}
+                    </p>
+
+                    {/* Title */}
+                    <h2 className="mt-2 font-headline-lg text-6xl  font-light leading-[1.05] leading-tight text-on-primary">
+                      {item.title}
+                    </h2>
+
+                    {/* Description */}
+                    <p className="mt-2 max-w-xl text-[1.55rem] leading-[2.25rem] text-[#B7B3AA] max-w-xl text-body-lg leading-relaxed">
+                      {item.description}
+                    </p>
+
+                    {/* Stats */}
+                    <div className="mt-10 flex flex-wrap gap-5">
                       {item.stats.map((stat) => (
-                        <span key={stat} className="rounded-full border border-outline-variant/40 bg-white/72 px-4 py-2 text-xs font-label-mono text-secondary">
+                        <span
+                          key={stat}
+                          className="rounded-full border flex items-center rounded-full border border-[#D4AF37]/20 bg-[#1A1A1A] px-7 py-4 font-label-mono text-[12px] tracking-[0.06em] text-[#E4C788] transition-all duration-300 hover:border-[#D4AF37]/45 hover:bg-[] px-5 py-3 font-label-mono text-[11px] uppercase tracking-[0.18em] text-on-primary transition-all duration-300 hover:border-primary/50 hover:bg-primary/12"
+                        >
                           {stat}
                         </span>
                       ))}
                     </div>
-                    <div className="mt-10">
-                      <AppLink href={`/work/${item.slug}`} className="font-label-mono text-[11px] uppercase tracking-[0.24em] text-secondary transition-colors hover:text-primary">
+
+                    {/* CTA */}
+                    <div  className="mt-8 inline-block border-b border-[#D4AF37]/35 pb-0">
+                      <AppLink
+                        href={`/work/${item.slug}`}
+                       className="inline-flex items-center gap-3 font-label-mono text-[11px] uppercase tracking-[0.30em] gap-4 text-[12px] tracking-[0.34em] text-[#D4AF37] transition-all duration-300 hover:gap-6"
+                      >
                         Read Case Study
+                        <span className="text-2xl transition-transform duration-300 group-hover:translate-x-2">
+                           →
+                        </span>
                       </AppLink>
+                    </div>
+                    <div>
+                      <br>
+                      </br>
+                      <br>
+                      </br>
                     </div>
                   </div>
                 </motion.div>
@@ -425,7 +487,6 @@ function WorkPage() {
     </>
   );
 }
-
 function CaseStudyPage({ caseStudy }: { caseStudy: (typeof caseStudies)[number] }) {
   useSeo(
     `${caseStudy.title} | Aurelis Digital Case Study`,
@@ -443,6 +504,9 @@ function CaseStudyPage({ caseStudy }: { caseStudy: (typeof caseStudies)[number] 
             <AppLink href="/contact" className="rounded-full bg-primary px-8 py-4 font-label-mono text-[11px] uppercase tracking-[0.24em] text-on-primary">
               Book Discovery Call
             </AppLink>
+            <AppLink href={caseStudy.link} target="_blank" rel="noopener noreferrer" className="rounded-full bg-primary px-8 py-4 font-label-mono text-[11px] uppercase tracking-[0.24em] text-on-primary">
+              Visit Site
+            </AppLink>
           </>
         }
         aside={
@@ -453,7 +517,7 @@ function CaseStudyPage({ caseStudy }: { caseStudy: (typeof caseStudies)[number] 
             <div className="mt-6 grid gap-3">
               {caseStudy.stats.map((stat) => (
                 <div key={stat} className="rounded-2xl border border-outline-variant/40 bg-white/72 px-4 py-3 font-body-md">
-                  <span className="surface-copy">{stat}</span>
+                  <span className="text-[#283145]">{stat}</span>
                 </div>
               ))}
             </div>
@@ -498,7 +562,7 @@ function CaseStudyPage({ caseStudy }: { caseStudy: (typeof caseStudies)[number] 
             </article>
           </Reveal>
           <Reveal className="lg:col-span-5">
-            <article className={cardLightLarge}>
+            <article className={cardDarkLarge}>
               <h2 className="surface-title font-headline-lg text-3xl">Technology Stack</h2>
               <div className="mt-6 flex flex-wrap gap-3">
                 {caseStudy.stack.map((item) => (
@@ -509,10 +573,36 @@ function CaseStudyPage({ caseStudy }: { caseStudy: (typeof caseStudies)[number] 
               </div>
               <div className="mt-10 rounded-[24px] border border-dashed border-outline-variant/50 bg-white/65 p-6">
                 <p className="font-label-mono text-[10px] uppercase tracking-[0.28em] text-secondary">Outcome</p>
-                <p className="surface-copy mt-4 font-body-md">{caseStudy.outcome}</p>
+                <p className="text-[#283145] mt-4 font-body-md">{caseStudy.outcome}</p>
               </div>
             </article>
           </Reveal>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function ProjectNotFoundPage() {
+  useSeo('Project Not Found | Aurelis Digital', 'The case study you are looking for could not be found. Return to the work archive to explore available projects.');
+
+  return (
+    <>
+      <PageHero
+        eyebrow="Work"
+        title="Project not found"
+        description="The case study you’re looking for is not available. Return to the work archive to view published projects."
+        actions={
+          <AppLink href="/work" className="rounded-full bg-primary px-8 py-4 font-label-mono text-[11px] uppercase tracking-[0.24em] text-on-primary">
+            Return to work
+          </AppLink>
+        }
+      />
+      <section data-surface-tone="light" className={`${sectionToneClass.light} px-margin-desktop py-section-gap`}>
+        <div className="grid gap-10 text-center">
+          <p className="surface-copy mx-auto max-w-3xl">
+            This case study either does not exist yet or the URL is incorrect. Browse the archive to explore the projects that are currently published.
+          </p>
         </div>
       </section>
     </>
@@ -1169,9 +1259,19 @@ function RouteSwitch() {
   const { pathname } = useNavigation();
   const path = pathname.replace(/\/+$/, '') || '/';
   const service = servicePages.find((item) => path === `/services/${item.slug}`);
+  const workSlug = path.startsWith('/work/') ? path.slice('/work/'.length) : '';
+  const workCaseStudy = workSlug ? caseStudies.find((item) => item.slug === workSlug) : undefined;
 
   if (service) {
     return <ServiceDetailPage service={service} />;
+  }
+
+  if (workSlug && !workCaseStudy) {
+    return <ProjectNotFoundPage />;
+  }
+
+  if (workCaseStudy) {
+    return <CaseStudyPage caseStudy={workCaseStudy} />;
   }
 
   switch (path) {
@@ -1181,6 +1281,8 @@ function RouteSwitch() {
       return <AboutPage />;
     case '/services':
       return <ServicesPage />;
+    case '/work':
+      return <WorkPage />;
     case '/ai-solutions':
       return <AISolutionsPage />;
     case '/contact':

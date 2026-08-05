@@ -11,6 +11,7 @@ export const navigationItems = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
   { label: 'Services', href: '/services' },
+  { label: 'Work', href: '/work' },
   { label: 'AI Solutions', href: '/ai-solutions' },
   { label: 'Contact', href: '/contact' },
 ];
@@ -107,55 +108,35 @@ export const servicePages = [
 ] as const;
 
 export const caseStudies = [
-  {
-    slug: 'velvet-and-stone',
-    label: 'Enterprise Retail Platform',
-    title: 'Velvet & Stone',
-    description: 'A luxury commerce system reworked for mobile-first storytelling, deeper merchandising, and frictionless checkout.',
-    image: '/AURELIS_OverDark-Photoroom.png',
-    overview:
-      'Velvet & Stone needed to feel more like a high-end retail studio than a standard commerce template. The redesign focused on editorial pacing, brand confidence, and a cleaner path to purchase.',
-    challenge:
-      'The existing experience was functional but visually flat. It struggled to communicate premium value quickly and created too many moments of uncertainty on smaller screens.',
-    solution:
-      'We rebuilt the information hierarchy, introduced richer product storytelling, and used motion and spacing to make the catalog feel curated rather than crowded.',
-    stack: ['Strategy', 'Design System', 'React', 'Motion', 'Content Ops'],
-    outcome:
-      'The new experience presents the brand with more authority, makes the product story easier to scan, and gives sales teams a more credible digital surface for enterprise conversations.',
-    stats: ['38% faster navigation', '2.1x stronger product visibility', 'Mobile-first storytelling'],
-  },
-  {
-    slug: 'lumina-capital',
-    label: 'Wealth Management',
-    title: 'Lumina Capital',
-    description: 'A trust-first experience for high-value financial clients with refined navigation and data clarity.',
-    image: '/AURELIS_OverLight-Photoroom.png',
-    overview:
-      'Lumina Capital needed a digital presence that could support high-trust discussions while staying approachable for prospective clients.',
-    challenge:
-      'The old structure buried proof points and made it hard for visitors to understand the firm’s positioning, process, and service depth at a glance.',
-    solution:
-      'We created a calmer interface with stronger narrative order, more visible social proof, and a premium motion language that respects the seriousness of the category.',
-    stack: ['UI/UX', 'Content Strategy', 'Accessibility', 'React', 'QA'],
-    outcome:
-      'The revised flow helps stakeholders move from curiosity to confidence more quickly, while the polished visual system supports a stronger perception of expertise.',
-    stats: ['Clearer positioning', 'Reduced bounce risk', 'More confident sales flow'],
-  },
-  {
-    slug: 'signal-forge',
-    label: 'AI Operations Suite',
-    title: 'Signal Forge',
-    description: 'A modular AI assistant stack that helps teams brief, generate, review, and ship content at speed.',
-    image: '/AURELIS_OverLight_Icon_bg.png',
-    overview:
-      'Signal Forge was designed as a practical AI operations layer for teams that needed speed without giving up editorial control.',
-    challenge:
-      'The team wanted automation, but not at the cost of quality. The system needed to support many tasks while staying easy to understand and govern.',
-    solution:
-      'We mapped the core workflows, introduced approval guardrails, and designed an interface that makes each step explicit so the system feels trustworthy.',
-    stack: ['AI', 'Automation', 'Workflow Design', 'Prompting', 'Analytics'],
-    outcome:
-      'The result is a more capable operating model that saves time, keeps quality visible, and gives the team a consistent way to scale output.',
-    stats: ['Faster briefing', 'Less repetitive work', 'Human review built in'],
-  },
+ 
+ {
+  slug: 'ember-bean',
+  label: 'Premium Café Experience',
+  title: 'Ember & Bean',
+  link: "https://ember-bean.vercel.app/",
+  description:
+    'A premium café website crafted to showcase artisanal coffee, handcrafted beverages, and a warm brand story through elegant visuals and immersive interactions.',
+  image: '/Ember&Bean.png', // Replace with your actual image path
+  overview:
+    'Ember & Bean was designed as a modern digital experience for a specialty café brand. The goal was to capture the atmosphere of a premium coffee house while making the website feel refined, inviting, and visually memorable.',
+  challenge:
+    'The project required balancing aesthetic storytelling with usability. Every section needed to evoke the warmth of a boutique café while keeping navigation effortless and ensuring menus, locations, and ordering remained easy to access.',
+  solution:
+    'We created a minimalist editorial layout supported by rich photography, soft typography, subtle motion, and carefully balanced whitespace. Every interaction was designed to reinforce the handcrafted nature of the brand while maintaining exceptional performance across all devices.',
+  stack: [
+    'Brand Identity',
+    'UI/UX Design',
+    'React',
+    'Vite',
+    'Framer Motion',
+    'Responsive Design',
+  ],
+  outcome:
+    'The final experience positions Ember & Bean as a premium lifestyle café rather than just another coffee shop. The website strengthens brand perception, encourages exploration, and creates a memorable first impression that aligns with the café’s handcrafted identity.',
+  stats: [
+    'Premium Brand Experience',
+    'Artisan Café Identity',
+    'Immersive Visual Storytelling',
+  ],
+},
 ] as const;
