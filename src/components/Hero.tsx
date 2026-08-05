@@ -19,15 +19,19 @@ export function Hero() {
       <video
         aria-hidden="true"
         autoPlay
-        className={`absolute inset-0 z-[-3] h-full w-full object-cover transition-opacity duration-[1800ms] ease-out ${videoReady ? 'opacity-100' : 'opacity-0'}`}
+        className={`absolute left-0 right-0 top-0 z-[-3] w-full object-cover transition-opacity duration-[1800ms] ease-out ${videoReady ? 'opacity-100' : 'opacity-0'}`}
         loop
         muted
         playsInline
         preload="auto"
         src="/video.mp4"
         style={{
+          top: 0,
+          bottom: '1.5cm',
           objectPosition: '50% 56%',
           filter: 'saturate(0.9) contrast(0.94) brightness(1.06)',
+          transform: 'scale(1.06)',
+          transformOrigin: 'top center',
         }}
       />
 
