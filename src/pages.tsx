@@ -48,6 +48,23 @@ function SectionCard({
   );
 }
 
+function ArrowUpRightIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <path d="M7 17 17 7" />
+      <path d="M7 7h10v10" />
+    </svg>
+  );
+}
+
 function StatPill({ label, value }: { label: string; value: string }) {
   return (
     <div className={cardDark}>
@@ -162,7 +179,7 @@ function AboutPage() {
 
         <div className="grid gap-8 md:grid-cols-3">
 
-          <div className={cardDarkLarge}>
+          <div className={`${cardDarkLarge} people-card-hover`}>
             <div className="w-14 h-[2px] bg-primary rounded-full mb-8" />
 
             <h3 className="font-headline-lg text-3xl text-on-primary">
@@ -178,7 +195,11 @@ function AboutPage() {
               creating practical solutions that help businesses grow and scale.
             </p>
           </div>
-          <div className={cardDarkLarge}>
+          <AppLink
+            href="https://aditya.aurelis-digital.com/"
+            target="_blank"
+            className={`${cardDarkLarge} people-card-hover group relative block`}
+          >
             <div className="w-14 h-[2px] bg-primary rounded-full mb-8" />
 
             <h3 className="font-headline-lg text-3xl text-on-primary">
@@ -193,10 +214,15 @@ function AboutPage() {
               Leads strategy, software architecture, and design systems, UI/UX design,
               building scalable digital products with a strong focus on innovation and technical excellence.
             </p>
-          </div>
+
+            <div className="mt-6 flex items-center gap-2 font-label-mono text-[11px] uppercase tracking-[0.24em] text-on-tertiary-container transition-colors duration-300 group-hover:text-on-primary">
+              Visit Profile
+              <ArrowUpRightIcon className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+            </div>
+          </AppLink>
 
 
-          <div className={cardDarkLarge}>
+          <div className={`${cardDarkLarge} people-card-hover`}>
             <div className="w-14 h-[2px] bg-primary rounded-full mb-8" />
 
             <h3 className="font-headline-lg text-3xl text-on-primary">
