@@ -334,6 +334,17 @@ body {
   color: var(--ds-text-inverse);
 }
 
+.people-card-hover {
+  transition: transform 320ms ease, box-shadow 320ms ease, border-color 320ms ease;
+  will-change: transform;
+}
+
+.people-card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
 .button-primary {
   background: var(--surface-button-primary-bg);
   color: var(--surface-button-primary-fg);
