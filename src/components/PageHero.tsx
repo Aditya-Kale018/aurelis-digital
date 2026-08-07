@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
+import { sectionPaddingX } from '../lib/rhythm';
 
 type PageHeroProps = {
   eyebrow: string;
@@ -18,16 +19,16 @@ export function PageHero({ eyebrow, title, description, actions, aside, dark = f
   return (
     <section
       data-surface-tone={dark ? 'dark' : 'light'}
-      className={`${sectionClass} rhythm-divider px-margin-desktop pt-40 pb-28`}
+      className={`${sectionClass} rhythm-divider ${sectionPaddingX} pt-28 pb-16 sm:pt-32 sm:pb-20 md:pt-36 md:pb-24 lg:pt-40 lg:pb-28`}
     >
       <div className="absolute inset-0 pointer-events-none opacity-60">
         <motion.div
-          className={`absolute -left-28 top-20 h-80 w-80 rounded-full blur-[110px] ${dark ? 'bg-secondary/12' : 'bg-secondary/10'}`}
+          className={`absolute -left-28 top-20 h-80 w-80 rounded-full blur-[48px] lg:blur-[110px] ${dark ? 'bg-secondary/12' : 'bg-secondary/10'}`}
           animate={reduceMotion ? undefined : { x: [0, 18, 0], y: [0, -10, 0] }}
           transition={{ duration: 16, repeat: Infinity, ease: 'easeInOut' }}
         />
         <motion.div
-          className={`absolute right-0 top-32 h-96 w-96 rounded-full blur-[120px] ${dark ? 'bg-white/8' : 'bg-tertiary-fixed/28'}`}
+          className={`absolute right-0 top-32 h-96 w-96 rounded-full blur-[52px] lg:blur-[120px] ${dark ? 'bg-white/8' : 'bg-tertiary-fixed/28'}`}
           animate={reduceMotion ? undefined : { x: [0, -18, 0], y: [0, 14, 0] }}
           transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
         />
@@ -43,7 +44,7 @@ export function PageHero({ eyebrow, title, description, actions, aside, dark = f
             {eyebrow}
           </span>
           <motion.h1
-            className="surface-title mt-6 font-display-hero text-[clamp(3.5rem,8vw,7.25rem)] leading-[0.95] tracking-[-0.05em]"
+            className="surface-title mt-6 font-display-hero text-[clamp(2.25rem,10vw,3.5rem)] sm:text-[clamp(3.5rem,8vw,7.25rem)] leading-[1.02] sm:leading-[0.95] tracking-[-0.03em] sm:tracking-[-0.05em]"
             initial={reduceMotion ? false : { opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.04, ease: [0.22, 1, 0.36, 1] }}

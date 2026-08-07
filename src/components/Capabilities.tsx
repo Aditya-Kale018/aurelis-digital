@@ -115,7 +115,7 @@ function ServiceCard({
         </motion.div>
 
         {/* Text — pinned to bottom left, illustration-safe zone */}
-        <div className="mt-auto w-[43%]">
+        <div className="mt-auto w-[62%] sm:w-[50%] lg:w-[43%]">
           <h3 className="svc-card-title mb-3 font-headline-lg text-[clamp(17px,1.45vw,20px)] font-semibold leading-[1.2] tracking-[-0.025em]">
             {service.title}
           </h3>

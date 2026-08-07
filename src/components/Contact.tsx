@@ -2,16 +2,16 @@ import { AppLink } from './AppLink';
 import { BrandMark } from './BrandMark';
 import { Reveal } from './Motion';
 import { brand } from '../lib/site';
-import { sectionToneClass } from '../lib/rhythm';
+import { sectionPadding, sectionToneClass } from '../lib/rhythm';
 
 export function Contact({ tone = 'dark' }: { tone?: 'light' | 'dark' }) {
   const sectionClass = sectionToneClass[tone];
 
   return (
-    <section data-surface-tone={tone} className={`${sectionClass} rhythm-divider px-margin-desktop py-section-gap text-center`} id="contact">
+    <section data-surface-tone={tone} className={`${sectionClass} rhythm-divider ${sectionPadding} text-center`} id="contact">
       <Reveal className="mx-auto max-w-5xl">
-        <BrandMark variant="light" className="mx-auto mb-16" imageClassName="max-h-[9rem] md:max-h-[11rem]" />
-        <h2 className="surface-title mb-8 font-display-hero text-6xl md:text-headline-lg">Ready to evolve?</h2>
+        <BrandMark variant="light" className="mx-auto mb-16" imageClassName="max-h-[3.5rem] sm:max-h-[5.5rem] md:max-h-[11rem]" />
+        <h2 className="surface-title mb-8 font-display-hero text-4xl sm:text-5xl md:text-headline-lg">Ready to evolve?</h2>
         <p className="surface-copy mx-auto mb-14 max-w-2xl font-body-lg text-body-lg">
           The future is not a destination. It is a design choice. Let’s build the architecture of your next decade.
         </p>

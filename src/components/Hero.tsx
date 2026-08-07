@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { AppLink } from './AppLink';
+import { sectionPaddingX } from '../lib/rhythm';
 
 export function Hero() {
   const [videoReady, setVideoReady] = useState(false);
@@ -12,7 +13,7 @@ export function Hero() {
   return (
     <section
       data-surface-tone="light"
-      className="section-light relative flex min-h-screen items-center overflow-hidden px-margin-desktop pt-28"
+      className={`section-light relative flex min-h-screen items-center overflow-hidden ${sectionPaddingX} pt-28`}
     >
       <div aria-hidden="true" className="absolute inset-0 z-[-4] bg-[linear-gradient(180deg,#fcfbff_0%,#f5f0ff_48%,#ece4ff_100%)]" />
 
@@ -35,18 +36,23 @@ export function Hero() {
         }}
       />
 
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 z-[-2] bg-[linear-gradient(180deg,rgba(252,251,255,0.9)_0%,rgba(252,251,255,0.72)_38%,rgba(236,228,255,0.55)_100%)] lg:hidden"
+      />
+
       <div className="relative z-10 grid w-full grid-cols-12 items-center gap-gutter">
         <div className="relative col-span-12 lg:col-span-7">
           <div
             aria-hidden="true"
-            className="absolute -left-10 top-1/2 h-[72vh] w-[78vw] -translate-y-1/2 rounded-full bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.72),rgba(255,255,255,0.42)_28%,rgba(255,255,255,0.16)_56%,transparent_74%)] blur-[72px] opacity-85"
+            className="absolute -left-10 top-1/2 h-[72vh] w-[78vw] -translate-y-1/2 rounded-full bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.72),rgba(255,255,255,0.42)_28%,rgba(255,255,255,0.16)_56%,transparent_74%)] blur-[36px] opacity-85 lg:blur-[72px]"
           />
           <div
             aria-hidden="true"
-            className="absolute left-[-4%] top-1/2 h-[58vh] w-[56vw] -translate-y-1/2 rounded-full bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.42),rgba(255,255,255,0.14)_42%,transparent_76%)] blur-[28px] opacity-70"
+            className="absolute left-[-4%] top-1/2 h-[58vh] w-[56vw] -translate-y-1/2 rounded-full bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.42),rgba(255,255,255,0.14)_42%,transparent_76%)] blur-[14px] opacity-70 lg:blur-[28px]"
           />
           <div className="relative z-10">
-            <h1 className="surface-title max-w-4xl font-display-hero text-[clamp(3.75rem,8vw,8rem)] leading-[0.94] tracking-[-0.05em]">
+            <h1 className="surface-title max-w-4xl font-display-hero text-[clamp(2.5rem,11vw,3.75rem)] sm:text-[clamp(3.75rem,8vw,8rem)] leading-[0.98] sm:leading-[0.94] tracking-[-0.03em] sm:tracking-[-0.05em]">
               We don't build websites. We design <span className="italic text-secondary">digital companies.</span>
             </h1>
             <p className="surface-copy mt-8 max-w-2xl font-body-lg text-body-lg">
@@ -67,7 +73,7 @@ export function Hero() {
         </div>
 
         <div className="col-span-12 mt-6 lg:col-span-5 lg:mt-0">
-          <div className="pointer-events-none min-h-[420px] sm:min-h-[500px] lg:min-h-[620px]" />
+          <div className="pointer-events-none min-h-[180px] sm:min-h-[420px] md:min-h-[500px] lg:min-h-[620px]" />
         </div>
       </div>
     </section>

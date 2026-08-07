@@ -12,19 +12,19 @@ import { Work } from './components/Work';
 import { Footer } from './components/Footer';
 import { Navbar } from './components/Navbar';
 import { NavigationProvider, useNavigation } from './lib/navigation';
-import { sectionToneClass } from './lib/rhythm';
+import { sectionPadding, sectionToneClass } from './lib/rhythm';
 import { brand, caseStudies, serviceHighlights, servicePages, socialItems } from './lib/site';
 import { useSeo } from './lib/seo';
 import { Reveal } from './components/Motion';
 
 type ServicePageData = (typeof servicePages)[number];
 
-const sectionLight = `${sectionToneClass.light} px-margin-desktop py-section-gap`;
-const sectionDark = `${sectionToneClass.dark} px-margin-desktop py-section-gap`;
-const cardDark = `surface-card-dark p-8`;
-const cardLight = `surface-card p-8`;
-const cardDarkLarge = `surface-card-dark p-10`;
-const cardLightLarge = `surface-card-elevated p-10`;
+const sectionLight = `${sectionToneClass.light} ${sectionPadding}`;
+const sectionDark = `${sectionToneClass.dark} ${sectionPadding}`;
+const cardDark = `surface-card-dark p-6 sm:p-7 lg:p-8`;
+const cardLight = `surface-card p-6 sm:p-7 lg:p-8`;
+const cardDarkLarge = `surface-card-dark p-6 sm:p-8 lg:p-10`;
+const cardLightLarge = `surface-card-elevated p-6 sm:p-8 lg:p-10`;
 
 function SectionCard({
   title,
@@ -117,14 +117,14 @@ function AboutPage() {
         }
         aside={
           <div className={cardDarkLarge}>
-            <BrandMark variant="light" className="mb-8" imageClassName="max-h-[9rem] md:max-h-[11rem]" />
+            <BrandMark variant="light" className="mb-8" imageClassName="max-h-[3.5rem] sm:max-h-[5.5rem] md:max-h-[11rem]" />
             <p className="surface-copy font-body-md">
               We partner with founders, marketing teams, and enterprise stakeholders who need a studio that can translate ambition into a premium digital presence.
             </p>
           </div>
         }
       />
-      <section data-surface-tone="dark" className={`${sectionToneClass.dark} px-margin-desktop py-section-gap`}>
+      <section data-surface-tone="dark" className={`${sectionToneClass.dark} ${sectionPadding}`}>
         <div className="grid gap-10 lg:grid-cols-2">
           <div className={cardDarkLarge}>
             <h2 className="surface-title font-headline-lg text-4xl">What we believe</h2>
@@ -149,7 +149,7 @@ function AboutPage() {
           </div>
         </div>
       </section>
-      <section data-surface-tone="light" className={`${sectionToneClass.light} px-margin-desktop py-section-gap`}>
+      <section data-surface-tone="light" className={`${sectionToneClass.light} ${sectionPadding}`}>
         <div className="grid gap-6 md:grid-cols-3">
           <StatPill label="Creative direction" value="Strategy" />
           <StatPill label="Interface systems" value="Clarity" />
@@ -159,7 +159,7 @@ function AboutPage() {
 
       <section
         data-surface-tone="dark"
-        className={`${sectionToneClass.dark} px-margin-desktop py-section-gap`}
+        className={`${sectionToneClass.dark} ${sectionPadding}`}
       >
         <div className="text-center mb-16">
           <p className="font-label-mono text-[11px] uppercase tracking-[0.28em] text-on-tertiary-container">
@@ -464,12 +464,12 @@ function WorkPage() {
                     </p>
 
                     {/* Title */}
-                    <h2 className="mt-2 font-headline-lg text-6xl  font-light leading-[1.05] leading-tight text-on-primary">
+                    <h2 className="mt-2 font-headline-lg text-3xl sm:text-4xl lg:text-6xl  font-light leading-[1.05] leading-tight text-on-primary">
                       {item.title}
                     </h2>
 
                     {/* Description */}
-                    <p className="mt-2 max-w-xl text-[1.55rem] leading-[2.25rem] text-[#B7B3AA] max-w-xl text-body-lg leading-relaxed">
+                    <p className="mt-2 max-w-xl text-base sm:text-lg lg:text-[1.55rem] leading-relaxed lg:leading-[2.25rem] text-[#B7B3AA]">
                       {item.description}
                     </p>
 
@@ -624,7 +624,7 @@ function ProjectNotFoundPage() {
           </AppLink>
         }
       />
-      <section data-surface-tone="light" className={`${sectionToneClass.light} px-margin-desktop py-section-gap`}>
+      <section data-surface-tone="light" className={`${sectionToneClass.light} ${sectionPadding}`}>
         <div className="grid gap-10 text-center">
           <p className="surface-copy mx-auto max-w-3xl">
             This case study either does not exist yet or the URL is incorrect. Browse the archive to explore the projects that are currently published.
@@ -798,7 +798,7 @@ function ContactPage() {
                 <label className="grid gap-2">
                   <span className="font-label-mono text-[11px] uppercase tracking-[0.24em] text-on-tertiary-container">Name</span>
                   <input
-                    className="rounded-2xl border border-white/12 bg-white/8 px-4 py-4 text-on-primary outline-none transition-colors focus:border-white/20"
+                    className="rounded-2xl border border-white/12 bg-white/8 px-4 py-4 text-on-primary outline-none transition-colors focus:border-white/20 focus-visible:ring-2 focus-visible:ring-white/50"
                     name="name"
                     placeholder="Your Name"
                     value={form.name}
@@ -810,7 +810,7 @@ function ContactPage() {
                 <label className="grid gap-2">
                   <span className="font-label-mono text-[11px] uppercase tracking-[0.24em] text-on-tertiary-container">Email</span>
                   <input
-                    className="rounded-2xl border border-white/12 bg-white/8 px-4 py-4 text-on-primary outline-none transition-colors focus:border-white/20"
+                    className="rounded-2xl border border-white/12 bg-white/8 px-4 py-4 text-on-primary outline-none transition-colors focus:border-white/20 focus-visible:ring-2 focus-visible:ring-white/50"
                     name="email"
                     type="email"
                     placeholder="name@company.com"
@@ -825,7 +825,7 @@ function ContactPage() {
                 <label className="grid gap-2">
                   <span className="font-label-mono text-[11px] uppercase tracking-[0.24em] text-on-tertiary-container">Company</span>
                   <input
-                    className="rounded-2xl border border-white/12 bg-white/8 px-4 py-4 text-on-primary outline-none transition-colors focus:border-white/20"
+                    className="rounded-2xl border border-white/12 bg-white/8 px-4 py-4 text-on-primary outline-none transition-colors focus:border-white/20 focus-visible:ring-2 focus-visible:ring-white/50"
                     name="company"
                     placeholder="Acme Co."
                     value={form.company}
@@ -835,7 +835,7 @@ function ContactPage() {
                 <label className="grid gap-2">
                   <span className="font-label-mono text-[11px] uppercase tracking-[0.24em] text-on-tertiary-container">Project type</span>
                   <select
-                    className="rounded-2xl border border-white/12 bg-white/8 px-4 py-4 text-on-primary outline-none transition-colors focus:border-white/20"
+                    className="rounded-2xl border border-white/12 bg-white/8 px-4 py-4 text-on-primary outline-none transition-colors focus:border-white/20 focus-visible:ring-2 focus-visible:ring-white/50"
                     name="projectType"
                     value={form.projectType}
                     onChange={handleChange('projectType')}
@@ -854,7 +854,7 @@ function ContactPage() {
               <label className="mt-6 grid gap-2">
                 <span className="font-label-mono text-[11px] uppercase tracking-[0.24em] text-on-tertiary-container">Project details</span>
                 <textarea
-                  className="min-h-48 rounded-3xl border border-white/12 bg-white/8 px-4 py-4 text-on-primary outline-none transition-colors focus:border-white/20"
+                  className="min-h-48 rounded-3xl border border-white/12 bg-white/8 px-4 py-4 text-on-primary outline-none transition-colors focus:border-white/20 focus-visible:ring-2 focus-visible:ring-white/50"
                   name="message"
                   placeholder="Tell us what you’re building, your timeline, and what success looks like."
                   value={form.message}
@@ -1333,7 +1333,12 @@ function RoutedApp() {
   return (
     <div className="relative min-h-screen">
       <GrainOverlay />
-      <div className="pointer-events-none fixed inset-x-0 top-0 z-40 h-28 bg-gradient-to-b from-white/70 to-transparent" aria-hidden="true" />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none fixed inset-x-0 top-0 z-40 h-24 lg:hidden"
+        style={{ background: 'linear-gradient(to bottom, rgba(90,100,130,0.10), rgba(90,100,130,0.03) 55%, transparent)' }}
+      />
+      <div className="pointer-events-none fixed inset-x-0 top-0 z-40 hidden h-28 bg-gradient-to-b from-white/70 to-transparent lg:block" aria-hidden="true" />
       <div className="relative z-10">
         <AnimatePresence mode="sync" initial={false}>
           <motion.main
