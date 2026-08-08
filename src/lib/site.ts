@@ -2,7 +2,7 @@ export const brand = {
   name: 'Aurelis Digital',
   shortName: 'Aurelis',
   tagline: 'Architectural precision in digital form.',
-  email: 'contact.aurelisdigital@gmail.com',
+  email: 'hello@aurelis-digital.com',
   phone: '+91 84210 18893',
   address: 'Aurelis Digital Studio, Bibwewadi, Pune, Maharashtra, India',
 };
