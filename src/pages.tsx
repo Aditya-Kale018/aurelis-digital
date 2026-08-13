@@ -178,8 +178,11 @@ function AboutPage() {
         </div>
 
         <div className="grid gap-8 md:grid-cols-3">
-
-          <div className={`${cardDarkLarge} people-card-hover`}>
+          <AppLink
+            href="https://soham.aurelis-digital.com/"
+            target="_blank"
+            className={`${cardDarkLarge} people-card-hover group relative block`}
+          >
             <div className="w-14 h-[2px] bg-primary rounded-full mb-8" />
 
             <h3 className="font-headline-lg text-3xl text-on-primary">
@@ -187,14 +190,19 @@ function AboutPage() {
             </h3>
 
             <p className="mt-3 font-label-mono text-[11px] uppercase tracking-[0.24em] text-on-tertiary-container">
-              Co-Founder
+              Founder & CTO
             </p>
 
             <p className="surface-copy mt-6">
               Drives AI innovation, intelligent automation, and emerging technologies,
               creating practical solutions that help businesses grow and scale.
             </p>
-          </div>
+
+            <div className="mt-6 flex items-center gap-2 font-label-mono text-[11px] uppercase tracking-[0.24em] text-on-tertiary-container transition-colors duration-300 group-hover:text-on-primary">
+              Visit Profile
+              <ArrowUpRightIcon className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+            </div>
+          </AppLink>
           <AppLink
             href="https://aditya.aurelis-digital.com/"
             target="_blank"
